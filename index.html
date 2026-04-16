@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ayush Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Monitoring Site</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .status {
+            font-size: 20px;
+            color: green;
+            margin: 15px 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Website is Running 🚀</h1>
+
+    <div class="container">
+        <h1>🚀 Website Monitor</h1>
+        <p>This website is used for monitoring system demo</p>
+
+        <!-- STATUS -->
+        <div class="status" id="status">🟢 Status: LIVE</div>
+
+        <!-- BUTTON -->
+        <button class="btn" onclick="check()">Check Status</button>
+    </div>
+
+    <script>
+        // Button click alert
+        function check() {
+            alert("Website is running perfectly ✅");
+        }
+
+        // Blinking animation
+        setInterval(() => {
+            let status = document.getElementById("status");
+
+            if (status.style.opacity == "0") {
+                status.style.opacity = "1";
+            } else {
+                status.style.opacity = "0";
+            }
+        }, 800);
+    </script>
+
 </body>
 </html>
